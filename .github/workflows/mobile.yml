@@ -1,4 +1,4 @@
-name: .NET MAUI CI
+name: .NET MAUI - CI
 
 on:
   push:
