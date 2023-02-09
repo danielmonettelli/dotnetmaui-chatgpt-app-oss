@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ContentPage
+    x:Class="ChatGPT.Views.ConversationView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+    xmlns:templates="clr-namespace:ChatGPT.Views.Templates"
+    xmlns:viewmodel="clr-namespace:ChatGPT.ViewModels"
+    x:Name="mainPage"
+    x:DataType="viewmodel:ConversationViewModel"
+    BackgroundColor="{AppThemeBinding Light={StaticResource BackgroundColorMainLight},
+                                      Dark={StaticResource BackgroundColorMainDark}}"
+    Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="UserMessageItemTemplate">
+            <templates:UserMessageItemTemplate />
+        </DataTemplate>
+
+        <DataTemplate x:Key="BotMessageItemTemplate">
+            <templates:BotMessageItemTemplate />
+        </DataTemplate>
+
+        <templates:MessageDataTemplateSelector
+            x:Key="MessageDataTemplateSelector"
+            BotMessageTemplate="{StaticResource BotMessageItemTemplate}"
+            UserMessageItemTemplate="{StaticResource UserMessageItemTemplate}" />
+    </ContentPage.Resources>
+
+
+    <Grid RowDefinitions="58, *, 16, Auto, 16">
+
+        <Grid
+            Grid.Row="0"
+            Padding="16,0"
+            BackgroundColor="{AppThemeBinding Light={StaticResource NavigationBarColorLight},
+                                              Dark={StaticResource NavigationBarColorDark}}"
+            ColumnDefinitions="Auto, *, Auto, 10, Auto">
+
+            <HorizontalStackLayout
+                Grid.Column="0"
+                BackgroundColor="Transparent"
+                Spacing="5">
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SelectThemeCommand}" />
+                </HorizontalStackLayout.GestureRecognizers>
+
+                <Image
+                    HeightRequest="35"
+                    Source="{AppThemeBinding Light=svg_brand_light.png,
+                                             Dark=svg_brand_dark.png}"
+                    WidthRequest="35" />
+
+                <Label
+                    Style="{StaticResource TxtHeadline6_1}"
+                    Text="ChatGPT"
+                    VerticalTextAlignment="Center" />
+            </HorizontalStackLayout>
+
+
+
+            <Border
+                Grid.Column="2"
+                BackgroundColor="{AppThemeBinding Light={StaticResource PrimaryLight},
+                                                  Dark={StaticResource PrimaryDark}}"
+                HeightRequest="35"
+                Opacity="{Binding OpacityModeMessage}"
+                StrokeShape="RoundRectangle 8,8,8,8"
+                WidthRequest="35">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AskQuestionCommand}" />
+                </Border.GestureRecognizers>
+
+                <Image
+                    HeightRequest="24"
+                    Source="svg_mode_message.png"
+                    WidthRequest="24" />
+            </Border>
+
+
+            <Border
+                Grid.Column="4"
+                BackgroundColor="{AppThemeBinding Light={StaticResource PrimaryLight},
+                                                  Dark={StaticResource PrimaryDark}}"
+                HeightRequest="35"
+                Opacity="{Binding OpacityModeImage}"
+                StrokeShape="RoundRectangle 8,8,8,8"
+                WidthRequest="35">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CreateImageCommand}" />
+                </Border.GestureRecognizers>
+
+                <Image
+                    HeightRequest="24"
+                    Source="svg_mode_image.png"
+                    WidthRequest="24" />
+            </Border>
+
+        </Grid>
+
+
+
+        <Border
+            Grid.Row="1"
+            Padding="16,10,16,30"
+            BackgroundColor="{AppThemeBinding Light={StaticResource SurfaceColorLight},
+                                              Dark={StaticResource SurfaceColorDark}}"
+            StrokeShape="RoundRectangle 0,0,36,36"
+            StrokeThickness="0">
+            <CollectionView
+                x:Name="myCollectionView"
+                ItemTemplate="{StaticResource MessageDataTemplateSelector}"
+                ItemsSource="{Binding Messages}">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+                        ItemSpacing="20"
+                        Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+
+            </CollectionView>
+        </Border>
+
+        <Grid
+            Grid.Row="1"
+            ColumnDefinitions="15*, 70*, 15*"
+            IsVisible="{Binding IsAnimationVisible}"
+            RowDefinitions="20*, 40*, Auto, 40*">
+
+            <skia:SKLottieView
+                Grid.Row="1"
+                Grid.Column="1"
+                IsAnimationEnabled="{Binding IsAnimationVisible}"
+                RepeatCount="-1"
+                Source="{AppThemeBinding Light=emptychat_light.json,
+                                         Dark=emptychat_dark.json}" />
+
+            <Label
+                Grid.Row="2"
+                Grid.ColumnSpan="3"
+                HorizontalTextAlignment="Center"
+                Style="{StaticResource TxtSubtitle2_1}"
+                Text="Don't be afraid and ask your question to ChatGPT" />
+        </Grid>
+
+
+        <Grid
+            Grid.Row="3"
+            Padding="16,0"
+            ColumnDefinitions="*, Auto, Auto"
+            ColumnSpacing="10">
+            <Border
+                Grid.Column="0"
+                BackgroundColor="{AppThemeBinding Light={StaticResource QuinaryLight},
+                                                  Dark={StaticResource QuinaryDark}}"
+                HeightRequest="48"
+                StrokeShape="RoundRectangle 36,36,36,36">
+
+                <Grid ColumnDefinitions="*, Auto">
+
+                    <Entry
+                        Margin="16,0"
+                        Placeholder="Enter text here..."
+                        Style="{StaticResource TxtSubtitle2_3}"
+                        Text="{Binding Query}"
+                        TranslationY="4" />
+
+                    <skia:SKLottieView
+                        Grid.Column="1"
+                        HeightRequest="48"
+                        HorizontalOptions="Center"
+                        IsVisible="{Binding IsBusy}"
+                        RepeatCount="-1"
+                        Source="loading.json"
+                        WidthRequest="48" />
+                </Grid>
+            </Border>
+
+            <Border
+                Grid.Column="1"
+                BackgroundColor="{AppThemeBinding Light={StaticResource QuinaryLight},
+                                                  Dark={StaticResource QuinaryDark}}"
+                HeightRequest="48"
+                StrokeShape="{OnPlatform WinUI='RoundRectangle 10,10,10,10',
+                                         MacCatalyst='RoundRectangle 10,10,10,10',
+                                         Default='RoundRectangle 24,24,24,24'}"
+                WidthRequest="48">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CurrentCommand}" />
+                </Border.GestureRecognizers>
+
+                <Image
+                    HeightRequest="24"
+                    Source="svg_send_message.png"
+                    WidthRequest="24" />
+            </Border>
+
+            <Border
+                Grid.Column="2"
+                BackgroundColor="{AppThemeBinding Light={StaticResource QuinaryLight},
+                                                  Dark={StaticResource QuinaryDark}}"
+                HeightRequest="48"
+                StrokeShape="{OnPlatform WinUI='RoundRectangle 10,10,10,10',
+                                         MacCatalyst='RoundRectangle 10,10,10,10',
+                                         Default='RoundRectangle 24,24,24,24'}"
+                WidthRequest="48">
+
+                <Image
+                    HeightRequest="24"
+                    Source="svg_microphone.png"
+                    WidthRequest="24" />
+            </Border>
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

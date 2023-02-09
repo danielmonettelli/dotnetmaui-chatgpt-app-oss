@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<Grid
+    x:Class="ChatGPT.Views.Templates.BotMessageItemTemplate"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:ChatGPT.Models"
+    x:DataType="model:Message"
+    ColumnDefinitions="*, Auto, 10, 35"
+    SizeChanged="ParentGrid_SizeChanged">
+
+    <Border
+        x:Name="borderText"
+        Grid.Column="1"
+        Padding="12"
+        BackgroundColor="{AppThemeBinding Light={StaticResource PrimaryLight},
+                                          Dark={StaticResource PrimaryDark}}"
+        StrokeShape="{OnPlatform WinUI='RoundRectangle 4,4,4,0',
+                                 MacCatalyst='RoundRectangle 4,4,4,0',
+                                 Default='RoundRectangle 16,16,16,0'}">
+        <StackLayout>
+            <Label
+                IsVisible="{Binding IsTextActive}"
+                Style="{StaticResource TxtSubtitle2_2}"
+                Text="{Binding Text}" />
+
+            <Image
+                HeightRequest="150"
+                IsVisible="{Binding IsImageActive}"
+                Source="{Binding Text}"
+                WidthRequest="150" />
+        </StackLayout>
+    </Border>
+
+    <Border
+        x:Name="borderImage"
+        Grid.Column="3"
+        BackgroundColor="{AppThemeBinding Light={StaticResource PrimaryLight},
+                                          Dark={StaticResource PrimaryDark}}"
+        HeightRequest="35"
+        StrokeShape="RoundRectangle 5,5,0,5"
+        VerticalOptions="End"
+        WidthRequest="35">
+
+        <Image
+            HeightRequest="22"
+            Source="svg_bot.png"
+            WidthRequest="22" />
+    </Border>
+
+</Grid>
