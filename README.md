@@ -32,6 +32,28 @@
 
 Experience natural conversations with our **ChatGPT** application, built with **.NET MAUI** for simplicity and efficiency.
 
+## Instructions
+
+Before using the application, it is recommended to create an OpenAI account and generate your API key. You can manage your secret keys on the following OpenAI page.
+
+- [OpenAI API Keys Page](https://platform.openai.com/account/api-keys).
+
+Next, add the OpenAI API key to the `OpenAIToken` constant in the project, which is responsible for storing it.
+
+```csharp
+namespace ChatGPT.Constants
+{
+	public static class APIConstants
+	{
+		public const string OpenAIUrl = "https://api.openai.com/";
+		public const string OpenAIToken = "OPENAI_API_KEY_HERE";
+
+		public const string OpenAIEndpoint_Completions = "v1/completions";
+		public const string OpenAIEndpoint_Generations = "v1/images/generations";
+	}
+}
+```
+
 ## Features
 
 |            | [<img src="https://raw.githubusercontent.com/danielmonettelli/NetMauiGPTApp/master/Assets/chatgpt.png" width="150">](#features) |
