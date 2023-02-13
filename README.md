@@ -1,18 +1,18 @@
 <p align="center">
-<a href="https://github.com/danielmonettelli/netmaui-chatgpt-app-challenge#gh-light-mode-only">
-<img width="300" src="https://raw.githubusercontent.com/danielmonettelli/netmaui-chatgpt-app-challenge/bf09fa30a93c68e32688c65f724d10b8fc3896bc/Assets/brand_light.svg#gh-light-mode-only">
+<a href="https://github.com/danielmonettelli/dotnetmaui-chatgpt-oss#gh-light-mode-only">
+<img width="300" src="https://raw.githubusercontent.com/danielmonettelli/dotnetmaui-chatgpt-oss/bf09fa30a93c68e32688c65f724d10b8fc3896bc/Assets/brand_light.svg#gh-light-mode-only">
 </a>
-<a href="https://github.com/danielmonettelli/netmaui-chatgpt-app-challenge#gh-dark-mode-only">
-<img width="300" src="https://raw.githubusercontent.com/danielmonettelli/netmaui-chatgpt-app-challenge/bf09fa30a93c68e32688c65f724d10b8fc3896bc/Assets/brand_dark.svg#gh-dark-mode-only">
+<a href="https://github.com/danielmonettelli/dotnetmaui-chatgpt-oss#gh-dark-mode-only">
+<img width="300" src="https://raw.githubusercontent.com/danielmonettelli/dotnetmaui-chatgpt-oss/bf09fa30a93c68e32688c65f724d10b8fc3896bc/Assets/brand_dark.svg#gh-dark-mode-only">
 </a>
 </p>
 
 <p align="center">
-  <a href="https://www.codacy.com/gh/danielmonettelli/netmaui-chatgpt-app-challenge/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=danielmonettelli/netmaui-chatgpt-app-challenge&amp;utm_campaign=Badge_Grade">
+  <a href="https://www.codacy.com/gh/danielmonettelli/dotnetmaui-chatgpt-oss/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=danielmonettelli/dotnetmaui-chatgpt-oss&amp;utm_campaign=Badge_Grade">
   <img src="https://app.codacy.com/project/badge/Grade/9ca8b20992ef499a8930d4c8b8cebcbf" alt="Codacy Badge">
   </a>
-  <a href="https://github.com/danielmonettelli/netmaui-chatgpt-app-challenge/actions/workflows/mobile.yml">
-  <img src="https://github.com/danielmonettelli/netmaui-chatgpt-app-challenge/actions/workflows/mobile.yml/badge.svg" alt=".NET MAUI CI">
+  <a href="https://github.com/danielmonettelli/dotnetmaui-chatgpt-oss/actions/workflows/mobile.yml">
+  <img src="https://github.com/danielmonettelli/dotnetmaui-chatgpt-oss/actions/workflows/mobile.yml/badge.svg" alt=".NET MAUI CI">
   </a>
   <a href="CODE_OF_CONDUCT.md">
     <img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant">
@@ -24,11 +24,11 @@
 
 <div align="center">
 
-[![Open Source ❤](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](#open-source-) [![Stars](https://img.shields.io/github/stars/danielmonettelli/netmaui-chatgpt-app-challenge)](https://github.com/danielmonettelli/netmaui-chatgpt-app-challenge/stargazers) [![Forks](https://img.shields.io/github/forks/danielmonettelli/netmaui-chatgpt-app-challenge)](https://github.com/danielmonettelli/netmaui-chatgpt-app-challenge/network/members) [![Pull Requests](https://img.shields.io/github/issues-pr/danielmonettelli/netmaui-chatgpt-app-challenge)](https://github.com/danielmonettelli/netmaui-chatgpt-app-challenge/pulls) [![Issues](https://img.shields.io/github/issues/danielmonettelli/netmaui-chatgpt-app-challenge)](https://github.com/danielmonettelli/netmaui-chatgpt-app-challenge/issues) [![Contributors](https://img.shields.io/github/contributors/danielmonettelli/netmaui-chatgpt-app-challenge?color=2b9348)](https://github.com/danielmonettelli/netmaui-chatgpt-app-challenge/graphs/contributors)
+[![Open Source ❤](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](#open-source-) [![Stars](https://img.shields.io/github/stars/danielmonettelli/dotnetmaui-chatgpt-oss)](https://github.com/danielmonettelli/dotnetmaui-chatgpt-oss/stargazers) [![Forks](https://img.shields.io/github/forks/danielmonettelli/dotnetmaui-chatgpt-oss)](https://github.com/danielmonettelli/dotnetmaui-chatgpt-oss/network/members) [![Pull Requests](https://img.shields.io/github/issues-pr/danielmonettelli/dotnetmaui-chatgpt-oss)](https://github.com/danielmonettelli/dotnetmaui-chatgpt-oss/pulls) [![Issues](https://img.shields.io/github/issues/danielmonettelli/dotnetmaui-chatgpt-oss)](https://github.com/danielmonettelli/dotnetmaui-chatgpt-oss/issues) [![Contributors](https://img.shields.io/github/contributors/danielmonettelli/dotnetmaui-chatgpt-oss?color=2b9348)](https://github.com/danielmonettelli/dotnetmaui-chatgpt-oss/graphs/contributors)
 
 </div>
 
-[![Main Cover](https://raw.githubusercontent.com/danielmonettelli/netmaui-chatgpt-app-challenge/main/Assets/chatgpt_main_cover.png)](#Main-Cover)
+[![Main Cover](https://raw.githubusercontent.com/danielmonettelli/dotnetmaui-chatgpt-oss/main/Assets/chatgpt_main_cover.png)](#Main-Cover)
 
 Experience natural conversations with our **ChatGPT** application, built with **.NET MAUI** for simplicity and efficiency.
 
@@ -66,12 +66,12 @@ namespace ChatGPT.Constants
 
 ## Supported platforms
 
-|            | [<img src="https://raw.githubusercontent.com/danielmonettelli/netmaui-chatgpt-app-challenge/main/Assets/dotnetmaui.png" width="150">](#dotnetmaui) |
+|            | [<img src="https://raw.githubusercontent.com/danielmonettelli/dotnetmaui-chatgpt-oss/main/Assets/dotnetmaui.png" width="150">](#dotnetmaui) |
 | -------------------------- | :----------------: |
-| [<img src="https://raw.githubusercontent.com/danielmonettelli/netmaui-chatgpt-app-challenge/main/Assets/android.png" width="100">](#android) |         ✔️         |
-| [<img src="https://raw.githubusercontent.com/danielmonettelli/netmaui-chatgpt-app-challenge/main/Assets/ios.png" width="100">](#iOS) |         ✔️         |
-| [<img src="https://raw.githubusercontent.com/danielmonettelli/netmaui-chatgpt-app-challenge/main/Assets/windows.png" width="100">](#windows) |         ✔️         |
-| [<img src="https://raw.githubusercontent.com/danielmonettelli/netmaui-chatgpt-app-challenge/main/Assets/macos.png" width="100">](#macos) |         ✔️         |
+| [<img src="https://raw.githubusercontent.com/danielmonettelli/dotnetmaui-chatgpt-oss/main/Assets/android.png" width="100">](#android) |         ✔️         |
+| [<img src="https://raw.githubusercontent.com/danielmonettelli/dotnetmaui-chatgpt-oss/main/Assets/ios.png" width="100">](#iOS) |         ✔️         |
+| [<img src="https://raw.githubusercontent.com/danielmonettelli/dotnetmaui-chatgpt-oss/main/Assets/windows.png" width="100">](#windows) |         ✔️         |
+| [<img src="https://raw.githubusercontent.com/danielmonettelli/dotnetmaui-chatgpt-oss/main/Assets/macos.png" width="100">](#macos) |         ✔️         |
 
 ## Design tool
 
