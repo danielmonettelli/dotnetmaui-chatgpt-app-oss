@@ -32,6 +32,8 @@
 
 Experience natural conversations with our **ChatGPT** application, built with **.NET MAUI** for simplicity and efficiency.
 
+> **IMPORTANT ANNOUNCEMENT:** An ethical and responsible use of ChatGPT, an application created in .NET MAUI and based on OpenAI technology, is essential. Users and developers must consider the possible ethical and social impacts, working together to guarantee ethical and responsible standards such as transparency, fairness and responsibility.
+
 ## Instructions
 
 Before using the application, it is recommended to create an OpenAI account and generate your API key. You can manage your secret keys on the following OpenAI page.
