@@ -86,7 +86,8 @@ namespace ChatGPT.Constants
 
 ## Publications
 
-- [Building a ChatGPT in .NET MAUI Part 1](https://danielmonettelli.github.io/posts/building-a-chatgpt-in-net-maui-part-1)
+- [Building a ChatGPT in .NET MAUI Part 1.](https://danielmonettelli.github.io/posts/building-a-chatgpt-in-net-maui-part-1)
+- [Building a ChatGPT in .NET MAUI Part 2.](https://danielmonettelli.github.io/posts/building-a-chatgpt-in-net-maui-part-2)
 
 ## 👥 Contributions Core
 
