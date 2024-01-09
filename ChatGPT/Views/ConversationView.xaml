@@ -67,6 +67,7 @@
                 HeightRequest="35"
                 Opacity="{Binding OpacityModeMessage}"
                 StrokeShape="RoundRectangle 8,8,8,8"
+                StrokeThickness="0"
                 WidthRequest="35">
                 <Border.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding AskQuestionCommand}" />
@@ -86,6 +87,7 @@
                 HeightRequest="35"
                 Opacity="{Binding OpacityModeImage}"
                 StrokeShape="RoundRectangle 8,8,8,8"
+                StrokeThickness="0"
                 WidthRequest="35">
                 <Border.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding CreateImageCommand}" />
@@ -155,7 +157,8 @@
                 BackgroundColor="{AppThemeBinding Light={StaticResource QuinaryLight},
                                                   Dark={StaticResource QuinaryDark}}"
                 HeightRequest="48"
-                StrokeShape="RoundRectangle 36,36,36,36">
+                StrokeShape="RoundRectangle 36,36,36,36"
+                StrokeThickness="0">
 
                 <Grid ColumnDefinitions="*, Auto">
 
@@ -185,6 +188,7 @@
                 StrokeShape="{OnPlatform WinUI='RoundRectangle 10,10,10,10',
                                          MacCatalyst='RoundRectangle 10,10,10,10',
                                          Default='RoundRectangle 24,24,24,24'}"
+                StrokeThickness="0"
                 WidthRequest="48">
                 <Border.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding CurrentCommand}" />
@@ -204,6 +208,7 @@
                 StrokeShape="{OnPlatform WinUI='RoundRectangle 10,10,10,10',
                                          MacCatalyst='RoundRectangle 10,10,10,10',
                                          Default='RoundRectangle 24,24,24,24'}"
+                StrokeThickness="0"
                 WidthRequest="48">
 
                 <Image

@@ -1,9 +1,10 @@
-﻿namespace ChatGPT;
-
-public partial class AppShell : Shell
+﻿namespace ChatGPT
 {
-	public AppShell()
-	{
-		InitializeComponent();
-	}
+    public partial class AppShell : Shell
+    {
+        public AppShell()
+        {
+            InitializeComponent();
+        }
+    }
 }

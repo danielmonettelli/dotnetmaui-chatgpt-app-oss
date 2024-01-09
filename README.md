@@ -58,7 +58,7 @@ namespace ChatGPT.Constants
 
 ## Features
 
-|            | [<img src="https://raw.githubusercontent.com/danielmonettelli/NetMauiGPTApp/master/Assets/chatgpt.png" width="150">](#features) |
+|            | [<img src="https://raw.githubusercontent.com/danielmonettelli/dotnetmaui-chatgpt-oss/main/Assets/chatgpt.png" width="150">](#features) |
 | -------------------------- | :----------------: |
 | Experience smooth animation when switching between light and dark themes        |         ✔️         |
 | Enjoy a harmonious interface on any screen size         |         In process of completion         |
@@ -77,7 +77,7 @@ namespace ChatGPT.Constants
 
 ## Design tool
 
-| [<img src="https://raw.githubusercontent.com/danielmonettelli/NetMauiGPTApp/master/Assets/penpot.png" width="150">](https://penpot.app) |
+| [<img src="https://raw.githubusercontent.com/danielmonettelli/dotnetmaui-chatgpt-oss/main/Assets/penpot.png" width="150">](https://penpot.app) |
 | -------------------------- |
 
 ## Tutorials

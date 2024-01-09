@@ -17,7 +17,8 @@
                                           Dark={StaticResource PrimaryDark}}"
         StrokeShape="{OnPlatform WinUI='RoundRectangle 4,4,4,0',
                                  MacCatalyst='RoundRectangle 4,4,4,0',
-                                 Default='RoundRectangle 16,16,16,0'}">
+                                 Default='RoundRectangle 16,16,16,0'}"
+        StrokeThickness="0">
         <StackLayout>
             <Label
                 IsVisible="{Binding IsTextActive}"
@@ -39,6 +40,7 @@
                                           Dark={StaticResource PrimaryDark}}"
         HeightRequest="35"
         StrokeShape="RoundRectangle 5,5,0,5"
+        StrokeThickness="0"
         VerticalOptions="End"
         WidthRequest="35">
 

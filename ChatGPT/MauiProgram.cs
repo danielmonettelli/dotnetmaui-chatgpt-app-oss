@@ -5,27 +5,29 @@ using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using SkiaSharp.Views.Maui.Controls.Hosting;
 
-namespace ChatGPT;
-public static class MauiProgram
+namespace ChatGPT
 {
-    public static MauiApp CreateMauiApp()
+    public static class MauiProgram
     {
-        var builder = MauiApp.CreateBuilder();
-        builder.UseMauiApp<App>()
-        .UseSkiaSharp()
-        .ConfigureFonts(fonts =>
+        public static MauiApp CreateMauiApp()
         {
-            fonts.AddFont("Mona-Sans-Bold.ttf", "MonaSansBold");
-            fonts.AddFont("Mona-Sans-Medium.ttf", "MonaSansMedium");
-        }).UseMauiCommunityToolkit();
+            var builder = MauiApp.CreateBuilder();
+            builder.UseMauiApp<App>()
+            .UseSkiaSharp()
+            .ConfigureFonts(fonts =>
+            {
+                fonts.AddFont("Mona-Sans-Bold.ttf", "MonaSansBold");
+                fonts.AddFont("Mona-Sans-Medium.ttf", "MonaSansMedium");
+            }).UseMauiCommunityToolkit();
 
-        builder.Services.AddSingleton<IOpenAIService, OpenAIService>();
-        builder.Services.AddTransient<ConversationViewModel>();
-        builder.Services.AddSingleton<ConversationView>();
+            builder.Services.AddSingleton<IOpenAIService, OpenAIService>();
+            builder.Services.AddTransient<ConversationViewModel>();
+            builder.Services.AddSingleton<ConversationView>();
 
 #if DEBUG
-        builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
-        return builder.Build();
+            return builder.Build();
+        }
     }
 }
