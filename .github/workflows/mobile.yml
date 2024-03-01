@@ -47,7 +47,7 @@ jobs:
           dotnet build ./ChatGPT -f net8.0-android
 
   Build_iOS:
-    runs-on: macos-13
+    runs-on: macos-14
 
     steps:
       - uses: actions/checkout@v3
@@ -75,7 +75,7 @@ jobs:
           dotnet build ./ChatGPT -f net8.0-ios
           
   Build_MacCatalyst:
-    runs-on: macos-13
+    runs-on: macos-14
 
     steps:
       - uses: actions/checkout@v3
