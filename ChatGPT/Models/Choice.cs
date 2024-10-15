@@ -1,8 +1,13 @@
-﻿namespace ChatGPT.Models
+﻿namespace ChatGPT.Models;
+
+public class Choice
 {
-	public class Choice
-	{
-		public string Text { get; set; }
-		public int Index { get; set; }
-	}
+    public Message Message { get; set; }
+}
+
+public class Message
+{
+    public string Role { get; set; } = "assistant";
+
+    public string Content { get; set; }
 }

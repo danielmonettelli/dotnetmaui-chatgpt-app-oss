@@ -1,16 +1,15 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ChatGPT.Models
+namespace ChatGPT.Models;
+
+public class GenerationRequest
 {
-	public class GenerationRequest
-	{
-		[JsonPropertyName("prompt")]
-		public string Prompt { get; set; }
+    [JsonPropertyName("prompt")]
+    public string Prompt { get; set; }
 
-		[JsonPropertyName("n")]
-		public int N { get; set; } = 1;
+    [JsonPropertyName("n")]
+    public int N { get; set; } = 1;
 
-		[JsonPropertyName("size")]
-		public string Size { get; set; } = "512x512";
-	}
+    [JsonPropertyName("size")]
+    public string Size { get; set; } = "512x512";
 }

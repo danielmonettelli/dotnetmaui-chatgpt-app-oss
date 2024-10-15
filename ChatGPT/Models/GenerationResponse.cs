@@ -1,7 +1,6 @@
-﻿namespace ChatGPT.Models
+﻿namespace ChatGPT.Models;
+
+public class GenerationResponse
 {
-    public class GenerationResponse
-    {
-        public List<GeneratedImage> Data { get; set; }
-    }
+    public List<GeneratedImage> Data { get; set; }
 }

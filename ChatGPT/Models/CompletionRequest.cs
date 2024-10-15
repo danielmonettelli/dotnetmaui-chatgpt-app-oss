@@ -1,19 +1,21 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ChatGPT.Models
+namespace ChatGPT.Models;
+
+public class CompletionRequest
 {
-    public class CompletionRequest
-    {
-        [JsonPropertyName("model")]
-        public string Model { get; set; } = "gpt-3.5-turbo-instruct";
+    [JsonPropertyName("model")]
+    public string Model { get; set; }
 
-        [JsonPropertyName("prompt")]
-        public string Prompt { get; set; }
+    [JsonPropertyName("messages")]
+    public List<MessageRequest> Messages { get; set; }
+}
 
-        [JsonPropertyName("temperature")]
-        public double Temperature { get; set; } = 0;
+public class MessageRequest
+{
+    [JsonPropertyName("role")]
+    public string Role { get; set; }
 
-        [JsonPropertyName("max_tokens")]
-        public int MaxTokens { get; set; } = 100;
-    }
+    [JsonPropertyName("content")]
+    public string Content { get; set; }
 }

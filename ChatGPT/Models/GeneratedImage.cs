@@ -1,7 +1,6 @@
-﻿namespace ChatGPT.Models
+﻿namespace ChatGPT.Models;
+
+public class GeneratedImage
 {
-	public class GeneratedImage
-	{
-		public string Url { get; set; }
-	}
+    public string Url { get; set; }
 }

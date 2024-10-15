@@ -9,7 +9,7 @@ namespace ChatGPT.Views.Templates
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            var message = (Message)item;
+            var message = (LocalMessage)item;
 
             return message.IsUserMessage ? UserMessageItemTemplate : BotMessageTemplate;
         }

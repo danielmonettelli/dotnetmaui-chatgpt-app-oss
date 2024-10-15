@@ -1,10 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace ChatGPT.ViewModels
+namespace ChatGPT.ViewModels;
+
+public partial class BaseViewModel : ObservableObject
 {
-    public partial class BaseViewModel : ObservableObject
-    {
-        [ObservableProperty]
-        bool isBusy;
-    }
+    [ObservableProperty]
+    bool isBusy;
 }

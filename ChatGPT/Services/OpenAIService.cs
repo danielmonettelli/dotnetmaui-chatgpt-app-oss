@@ -5,61 +5,73 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 
-namespace ChatGPT.Services
+namespace ChatGPT.Services;
+
+public class OpenAIService : IOpenAIService
 {
-    public class OpenAIService : IOpenAIService
+    HttpClient client;
+    JsonSerializerOptions options = new() { PropertyNameCaseInsensitive = true };
+
+    public OpenAIService()
     {
-        HttpClient client;
-        JsonSerializerOptions options = new() { PropertyNameCaseInsensitive = true };
+        client = new HttpClient();
+        client.BaseAddress = new Uri(APIConstants.OpenAIUrl);
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", APIConstants.OpenAIToken);
+        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+    }
 
-        public OpenAIService()
+    public async Task<string> AskQuestion(string query)
+    {
+        var completion = new CompletionRequest
         {
-            client = new HttpClient();
-            client.BaseAddress = new Uri(APIConstants.OpenAIUrl);
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", APIConstants.OpenAIToken);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        }
-
-        public async Task<string> AskQuestion(string query)
-        {
-            var completion = new CompletionRequest()
+            Model = "gpt-4o-mini",
+            Messages = new List<MessageRequest>
             {
-                Prompt = query
-            };
-
-            var body = JsonSerializer.Serialize(completion);
-            var content = new StringContent(body, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync(APIConstants.OpenAIEndpoint_Completions, content);
-
-            if (response.IsSuccessStatusCode)
-            {
-                var data = await response.Content.ReadFromJsonAsync<CompletionResponse>(options);
-                return data?.Choices?.FirstOrDefault().Text;
+                new MessageRequest
+                {
+                    Role = "system",
+                    Content = "You are a helpful assistant."
+                },
+                new MessageRequest
+                {
+                    Role = "user",
+                    Content = query
+                }
             }
+        };
 
-            return default;
-        }
+        var body = JsonSerializer.Serialize(completion);
+        var content = new StringContent(body, Encoding.UTF8, "application/json");
 
-        public async Task<string> CreateImage(string query)
+        var response = await client.PostAsync(APIConstants.OpenAIEndpoint_Completions, content);
+
+        if (response.IsSuccessStatusCode)
         {
-            var generation = new GenerationRequest()
-            {
-                Prompt = query
-            };
-
-            var body = JsonSerializer.Serialize(generation);
-            var content = new StringContent(body, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync(APIConstants.OpenAIEndpoint_Generations, content);
-
-            if (response.IsSuccessStatusCode)
-            {
-                var data = await response.Content.ReadFromJsonAsync<GenerationResponse>(options);
-                return data.Data?.FirstOrDefault()?.Url;
-            }
-
-            return default;
+            var data = await response.Content.ReadFromJsonAsync<CompletionResponse>(options);
+            return data?.Choices?.FirstOrDefault().Message.Content;
         }
+
+        return default;
+    }
+
+    public async Task<string> CreateImage(string query)
+    {
+        var generation = new GenerationRequest()
+        {
+            Prompt = query
+        };
+
+        var body = JsonSerializer.Serialize(generation);
+        var content = new StringContent(body, Encoding.UTF8, "application/json");
+
+        var response = await client.PostAsync(APIConstants.OpenAIEndpoint_Generations, content);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var data = await response.Content.ReadFromJsonAsync<GenerationResponse>(options);
+            return data.Data?.FirstOrDefault()?.Url;
+        }
+
+        return default;
     }
 }
