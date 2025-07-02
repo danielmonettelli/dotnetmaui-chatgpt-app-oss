@@ -24,6 +24,10 @@ public partial class BotMessageItemTemplate : Grid
     {
         var borderText = (Border)sender;
 
+        // Prevent NullReferenceException if _parentGrid hasn't been initialized yet
+        if (_parentGrid == null)
+            return;
+
         var widthMaxBorderText = _parentGrid.Width - 45;
 
         if (borderText.Width > widthMaxBorderText)
